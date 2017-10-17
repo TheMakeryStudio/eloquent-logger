@@ -2,9 +2,9 @@
 
 namespace Makery\EloquentLogger;
 
-use Makery\EloquentLogger\Log;
+use Makery\EloquentLogger\LogModel;
 
-class LogArchive extends Log
+class LogArchive extends LogModel
 {
-	protected $table = "log_archives";
+	protected $table = 'log_archives';
 }

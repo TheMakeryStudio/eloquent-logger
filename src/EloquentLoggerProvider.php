@@ -1,25 +1,15 @@
 <?php
 
-namespace Makery\EloquentLogger\Providers;
+namespace Makery\EloquentLogger;
 
 use Log;
-use Makery\EloquentLogger\Log as LogModel;
-use Makery\EloquentLogger\EloquentLogHandler;
+use Makery\EloquentLogger\LogScheduler;
+use Makery\EloquentLogger\LogModel;
+use Makery\EloquentLogger\EloquentLoggerRepository;
 use Illuminate\Support\ServiceProvider;
 
 class EloquentLoggerProvider extends ServiceProvider
 {
-    private $logger;
-
-    /**
-     * Get underlying monorlog instance.
-     * @return type
-     */
-    public function __construct()
-    {
-        $this->logger = Log::getMonolog();
-    }
-
     /**
      * Bootstrap the application services.
      *
@@ -27,7 +17,16 @@ class EloquentLoggerProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');        
+        $this->publishes([
+            realpath(__DIR__.'/../config/app.php') => config_path('app.php'),
+        ], 'config');
+        $logger = Log::getMonolog();
+        $logger->popHandler();
+        $logger->pushHandler(new EloquentLoggerRepository(
+            new LogModel
+        ));
+
+        LogScheduler::start($schedule);
     }
 
     /**
@@ -37,10 +36,8 @@ class EloquentLoggerProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
-        $this->logger->popHandler();
-        $this->logger->pushHandler(new EloquentLogHandler(
-            new LogModel
-        ));
+    {   
+        $this->mergeConfigFrom(realpath(__DIR__.'/../config/app.php'), 'app');
+        $this->loadMigrationsFrom(__DIR__.'/../migrations/');
     }
 }

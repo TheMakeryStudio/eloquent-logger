@@ -2,6 +2,10 @@
 
 namespace Makery\EloquentLogger;
 
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
 trait LogSchemaTrait
 {
     public function makeLogsSchema($table_name)

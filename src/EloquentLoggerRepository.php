@@ -25,7 +25,7 @@ class EloquentLoggerRepository extends AbstractProcessingHandler
     }
 
     private function populate()
-    {
+    {   
     	$this->log_model->fill([
     		'time' => $this->record['datetime'],
     		'channel' => $this->record['channel'],

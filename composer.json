@@ -10,13 +10,16 @@
         }
     },
     "require": {
-                
+        "illuminate/support": "5.5.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0"
     },
     "extra" : {
         "laravel": {
             "providers": [
                 "Makery\\EloquentLogger\\EloquentLoggerProvider"
-            ]            
+            ]
         }
-    }
+    }    
 }
