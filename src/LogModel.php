@@ -18,6 +18,11 @@ class LogModel extends Model
     	'stacktrace'
     ];
 
+    public function scopeDate($query, $date)
+    {
+    	return $query->whereDate('time', $date);
+    }
+
     public function scopeDebug($query)
     {
     	return $query->where('level', 'DEBUG');
@@ -57,4 +62,9 @@ class LogModel extends Model
     {
     	return $query->where('level', 'EMERGENCY');
     }
+
+    public function scopeChannel($query, $channel_name)
+    {
+    	return $query->where('channel', $channel_name);
+    }    
 }
