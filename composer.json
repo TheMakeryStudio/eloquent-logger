@@ -1,12 +1,12 @@
 {
-    "name": "theTheMakeryStudiostudio/eloquentlogger",
+    "name": "themakerystudio/eloquentlogger",
     "description": "Eloquent driver for Laravel's implementation of Monolog.",
     "keywords": ["monolog", "laravel", "eloquent", "logging"],
     "license": "MIT",
     "type": "project",          
     "autoload": {
         "psr-4": {
-            "TheTheMakeryStudioStudio\\EloquentLogger\\": "src/"
+            "TheMakeryStudio\\EloquentLogger\\": "src/"
         }
     },
     "require": {
@@ -18,7 +18,7 @@
     "extra" : {
         "laravel": {
             "providers": [
-                "TheTheMakeryStudioStudio\\EloquentLogger\\EloquentLoggerProvider"
+                "TheMakeryStudio\\EloquentLogger\\EloquentLoggerProvider"
             ]
         }
     }    

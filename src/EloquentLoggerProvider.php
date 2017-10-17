@@ -37,7 +37,7 @@ class EloquentLoggerProvider extends ServiceProvider
      */
     public function register()
     {   
-        $this->mergeConfigFrom(realpath(__DIR__.'/../config/app.php'), 'app');
+        $this->mergeConfigFrom(__DIR__.'/../config/app.php', 'app');
         $this->loadMigrationsFrom(__DIR__.'/../migrations/');
     }
 }

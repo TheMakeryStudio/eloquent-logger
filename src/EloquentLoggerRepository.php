@@ -38,9 +38,7 @@ class EloquentLoggerRepository extends AbstractProcessingHandler
 
     private function getStackTrace()
     {
-    	$this->log_model->stacktrace = $this->record
-    		['context']
-    		['exception']
+    	$this->log_model->stacktrace = $this->record['context']['exception']
     		->getTraceAsString();
     }
 }
