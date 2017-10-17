@@ -10,13 +10,13 @@ class CreateLogArchivesTable extends Migration
     use LogSchemaTrait;
 
     /**
-     * Run the migrations.
+     * Run the migrations. The Archive table has a timestamp.
      *
      * @return void
      */
     public function up()
     {
-        $this->makeLogsSchema('log_archives');
+        $this->makeLogsSchema('log_archives', true);
     }
 
     /**

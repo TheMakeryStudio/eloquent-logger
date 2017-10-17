@@ -12,10 +12,8 @@ class LogScheduler
 
 	}
 
-	public static function start(Schedule $schedule)
+	public function start(Schedule $schedule)
 	{
-		dd($schedule);
-
 		$schedule->job(new ArchiveLogsJob)
 			->everyFiveMinutes();
 	}

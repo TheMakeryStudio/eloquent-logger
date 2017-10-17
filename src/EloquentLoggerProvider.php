@@ -24,9 +24,7 @@ class EloquentLoggerProvider extends ServiceProvider
         $logger->popHandler();
         $logger->pushHandler(new EloquentLoggerRepository(
             new LogModel
-        ));
-
-        LogScheduler::start($schedule);
+        ));        
     }
 
     /**
@@ -37,7 +35,6 @@ class EloquentLoggerProvider extends ServiceProvider
      */
     public function register()
     {   
-        $this->mergeConfigFrom(__DIR__.'/../config/app.php', 'app');
         $this->loadMigrationsFrom(__DIR__.'/../migrations/');
     }
 }
