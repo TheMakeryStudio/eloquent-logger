@@ -1,6 +1,6 @@
 <?php
 
-namespace Makery\EloquentLogger;
+namespace TheMakeryStudio\EloquentLogger;
 
 class EloquentLogArchiver
 {

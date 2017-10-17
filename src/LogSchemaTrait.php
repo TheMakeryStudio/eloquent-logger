@@ -1,6 +1,6 @@
 <?php
 
-namespace Makery\EloquentLogger;
+namespace TheMakeryStudio\EloquentLogger;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;

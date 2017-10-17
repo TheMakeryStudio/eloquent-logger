@@ -1,11 +1,11 @@
 <?php
 
-namespace Makery\EloquentLogger;
+namespace TheMakeryStudio\EloquentLogger;
 
 use Log;
-use Makery\EloquentLogger\LogScheduler;
-use Makery\EloquentLogger\LogModel;
-use Makery\EloquentLogger\EloquentLoggerRepository;
+use TheMakeryStudio\EloquentLogger\LogScheduler;
+use TheMakeryStudio\EloquentLogger\LogModel;
+use TheMakeryStudio\EloquentLogger\EloquentLoggerRepository;
 use Illuminate\Support\ServiceProvider;
 
 class EloquentLoggerProvider extends ServiceProvider

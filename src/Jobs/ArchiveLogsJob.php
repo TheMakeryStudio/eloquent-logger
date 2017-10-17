@@ -1,6 +1,6 @@
 <?php
 
-namespace Makery\EloquentLogger\Jobs;
+namespace TheMakeryStudio\EloquentLogger\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 

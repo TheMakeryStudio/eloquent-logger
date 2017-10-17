@@ -1,6 +1,6 @@
 <?php
 
-namespace Makery\EloquentLogger;
+namespace TheMakeryStudio\EloquentLogger;
 
 use Exception;
 use Monolog\Logger;

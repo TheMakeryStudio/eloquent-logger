@@ -1,9 +1,9 @@
 <?php
 
-namespace Makery\EloquentLogger;
+namespace TheMakeryStudio\EloquentLogger;
 
 use Illuminate\Console\Scheduling\Schedule;
-use Makery\EloquentLogger\Jobs\ArchiveLogsJob;
+use TheMakeryStudio\EloquentLogger\Jobs\ArchiveLogsJob;
 
 class LogScheduler
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Makery\EloquentLogger;
+namespace TheMakeryStudio\EloquentLogger;
 
-use Makery\EloquentLogger\LogModel;
+use TheMakeryStudio\EloquentLogger\LogModel;
 
 class LogArchive extends LogModel
 {
