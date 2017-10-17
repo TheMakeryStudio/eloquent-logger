@@ -35,14 +35,13 @@ class ArchiveLogs extends Command
     }
 
     /**
-     * Execute the console command, only if app,log is set to "daily".
+     * Execute the console command, only if app.log is set to "daily".
      *
      * @return mixed
      */
     public function handle()
     {
-        if (config('app.log') !== 'daily') return;
-
-        $this->archiver->run();
+        if (config('app.log') === 'daily')
+        	$this->archiver->run();
     }
 }

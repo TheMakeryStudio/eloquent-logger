@@ -6,8 +6,7 @@ class EloquentLogArchiver
 {
 	public function run()
 	{
-		$this->copyLogsToArchive()
-			->clearLogDatastore();
+		$this->copyLogsToArchive()->clearLogDatastore();
 	}
 
 	private function copyLogsToArchive()

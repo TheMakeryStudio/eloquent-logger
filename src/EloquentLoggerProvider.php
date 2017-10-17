@@ -2,11 +2,9 @@
 
 namespace TheMakeryStudio\EloquentLogger;
 
-use Log;
-use TheMakeryStudio\EloquentLogger\LogScheduler;
+use Illuminate\Support\ServiceProvider;
 use TheMakeryStudio\EloquentLogger\LogModel;
 use TheMakeryStudio\EloquentLogger\EloquentLoggerRepository;
-use Illuminate\Support\ServiceProvider;
 
 class EloquentLoggerProvider extends ServiceProvider
 {
@@ -16,15 +14,12 @@ class EloquentLoggerProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        $this->publishes([
-            realpath(__DIR__.'/../config/app.php') => config_path('app.php'),
-        ], 'config');
-        $logger = Log::getMonolog();
+    {                        
+        $logger = app()->make('log')->getMonolog();        
         $logger->popHandler();
         $logger->pushHandler(new EloquentLoggerRepository(
             new LogModel
-        ));        
+        ));
     }
 
     /**

@@ -2,7 +2,6 @@
 
 namespace TheMakeryStudio\EloquentLogger;
 
-use Exception;
 use Monolog\Logger;
 use Monolog\Handler\AbstractProcessingHandler;
 
